@@ -137,6 +137,7 @@ Bin.ready(function () {
     var IconWrapper = document.querySelector(".popup .icons");
 
     var width = window.innerWidth;
+    var swipeYN = false;
 
     var popupFn = function () {
         //overlayer.setAttribute("style", "display: block");
@@ -193,6 +194,7 @@ Bin.ready(function () {
         Bin.styleChange(IconWrapper, "transform: translate(-" + width + "px, 0", 0).then(function(){
             close.setAttribute("style", "display: none");
             close2.setAttribute("style", "display: flex");
+            swipeYN = true;
         });
     };
 
@@ -200,6 +202,7 @@ Bin.ready(function () {
         Bin.styleChange(IconWrapper, "", 0).then(function(){
             close.setAttribute("style", "");
             close2.setAttribute("style", "");
+            swipeYN = false;
         });
     };
 
@@ -211,28 +214,42 @@ Bin.ready(function () {
     Bin.on(backBtn, "touchstart", swipeBackFn, false);
 
     //fix overlayer gesture issue
-    var startX, startY;
+    var startX, startY, timestamp;
 
     Bin.on(overlayer, "touchstart", function(ev){
         var event = ev || window.event;
-        console.log("touchstart");
-        console.log(event);
+        //console.log("touchstart");
+        //console.log(event);
         event.preventDefault();
         var touch = event.touches[0];
-        console.log(touch);
+        //console.log(touch);
         startX = touch.pageX;
         startY = touch.pageY;
+        timestamp = +new Date();
     }, false);
 
     Bin.on(overlayer, "touchmove", function(ev){
         var event = ev || window.event;
-        console.log("touchmove");
-        console.log(event);
+        //console.log("touchmove");
+        //console.log(event);
         event.preventDefault();
         var touch = event.touches[0];
         var deltaX = touch.pageX - startX;
         var deltaY = touch.pageY - startY;
-        if(Math.abs(deltaX) > Math.abs(deltaY) && deltaX < 0){
+        if(Math.abs(deltaX) > Math.abs(deltaY) && deltaX > 0){
+            swipeBackFn();
+        }
+    }, false);
+
+    Bin.on(overlayer, "touchend", function(ev){
+        var event = ev || window.event;
+        event.preventDefault();
+        //console.log(event);
+        var touch = event.changedTouches[0];
+        var deltaX = touch.pageX - startX;
+        var deltaY = touch.pageY - startY;
+        var deltaTime = +new Date() - timestamp;
+        if(deltaTime < 300 && Math.abs(deltaX) === 0 && Math.abs(deltaY) === 0){
             popupCloseFn();
         }
     }, false);
