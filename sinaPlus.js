@@ -191,7 +191,7 @@ Bin.ready(function () {
     };
 
     var swipeFn = function(){
-        Bin.styleChange(IconWrapper, "transform: translate(-" + width + "px, 0", 0).then(function(){
+        Bin.styleChange(IconWrapper, "transform: translate(-" + width + "px, 0)", 0).then(function(){
             close.setAttribute("style", "display: none");
             close2.setAttribute("style", "display: flex");
             swipeYN = true;
