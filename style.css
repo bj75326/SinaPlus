@@ -174,9 +174,21 @@ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    width: 200%;
+    transition: all 0.5s;
+}
+
+.popup .icons .group{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
 }
 
 .popup .icons .icon {
@@ -204,28 +216,52 @@ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p {
     color: #fff;
 }
 
-.icons .icon:nth-child(1) a i {
+.icons .group:nth-child(1) .icon:nth-child(1) a i {
     background-color: #cd8484;
 }
 
-.icons .icon:nth-child(2) a i {
+.icons .group:nth-child(1) .icon:nth-child(2) a i {
     background-color: #ec9f83;
 }
 
-.icons .icon:nth-child(3) a i {
+.icons .group:nth-child(1) .icon:nth-child(3) a i {
     background-color: #cdb274;
 }
 
-.icons .icon:nth-child(4) a i {
+.icons .group:nth-child(1) .icon:nth-child(4) a i {
     background-color: #88b999;
 }
 
-.icons .icon:nth-child(5) a i {
+.icons .group:nth-child(1) .icon:nth-child(5) a i {
     background-color: #88b2b9;
 }
 
-.icons .icon:nth-child(6) a i {
+.icons .group:nth-child(1) .icon:nth-child(6) a i {
     background-color: #8897b9;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(1) a i {
+    background-color: #2ca9e1;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(2) a i {
+    background-color: #ec6d71;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(3) a i {
+    background-color: #00a381;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(4) a i {
+    background-color: #e6b422;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(5) a i {
+    background-color: #e95295;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(6) a i {
+    background-color: #d9333f;
 }
 
 .icons .icon a span {
@@ -235,7 +271,7 @@ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p {
     color: #434343;
 }
 
-.popup .exit {
+.popup .exit, .popup .exit2 {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -253,3 +289,27 @@ html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p {
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
+
+.popup .exit2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: none;
+}
+
+.popup .exit2 i {
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+    display: block;
+    line-height: 3.5rem;
+}
+
+.popup .exit2 i:nth-child(1){
+    border-right: 0.01rem solid #e8dfdf;
+    font-size: 2.2rem;
+    color: #007b43;
+}
+
+
+
