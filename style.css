@@ -1,0 +1,315 @@
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+html, body {
+    background-color: #333;
+    font-size: 14px;
+    font-family: 'RobotoDraft', 'Roboto', "Microsoft Yahei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100% !important;
+}
+
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    position: relative;
+}
+
+.header {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    background-color: #fff;
+    height: 4rem;
+    width: 100%;
+    border-bottom: 1px solid #d3d3d3;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.head {
+    -webkit-flex: 0 1 25%;
+    -ms-flex: 0 1 25%;
+    flex: 0 1 25%;
+    height: 100%;
+}
+
+.head:nth-child(2) {
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+    text-align: center;
+}
+
+.head:nth-child(2) a {
+    text-decoration: none;
+}
+
+.head:nth-child(2) span {
+    margin-right: 1rem;
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.head:nth-child(2) i {
+    color: #f07c01;
+}
+
+.head a {
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: 1rem 1.2rem 0.8rem;
+    color: #AEAEAE;
+}
+
+.right {
+    float: right;
+}
+
+.footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    background-color: #fff;
+    height: 4.5rem;
+    width: 100%;
+    border-top: 1px solid #d3d3d3;
+    box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.foot {
+    -webkit-flex: 0 1 20%;
+    -ms-flex: 0 1 20%;
+    flex: 0 1 20%;
+    height: 100%;
+}
+
+.foot a {
+    display: block;
+    width: 100%;
+    color: #AEAEAE;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 0.2rem;
+}
+
+.foot:nth-child(3) a {
+    height: 100%;
+}
+
+.foot a i {
+    display: block;
+    width: 100%;
+    height: 2.5rem;
+    font-size: 2.2rem;
+    line-height: 2.5rem;
+}
+
+.foot:nth-child(2) a i, .foot:nth-child(4) a i {
+    font-size: 2rem;
+}
+
+.foot:nth-child(3) a i {
+    height: 100%;
+    line-height: 4rem;
+    font-size: 3.6rem;
+    color: #f07c01;
+}
+
+.foot a span {
+    display: block;
+    width: 100%;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    font-size: 1.3rem;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 2000px;
+    padding-top: 4rem;
+    background-color: #007bc4;
+}
+
+.overlayer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.93);
+    z-index: 998;
+    display: none;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    top: 45%;
+    left: 0;
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.popup .icons {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 200%;
+    transition: all 0.5s;
+}
+
+.popup .icons .group{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+}
+
+.popup .icons .icon {
+    -webkit-flex: 1 1 30%;
+    -ms-flex: 1 1 30%;
+    flex: 1 1 30%;
+}
+
+.icons .icon a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    transform: translate(0, 27rem);
+    transition: all 1s cubic-bezier(.82, -0.37, .17, 1.39);
+}
+
+.icons .icon a i {
+    display: block;
+    width: 5rem;
+    height: 5rem;
+    margin: auto;
+    line-height: 5rem;
+    font-size: 2.2rem;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.icons .group:nth-child(1) .icon:nth-child(1) a i {
+    background-color: #cd8484;
+}
+
+.icons .group:nth-child(1) .icon:nth-child(2) a i {
+    background-color: #ec9f83;
+}
+
+.icons .group:nth-child(1) .icon:nth-child(3) a i {
+    background-color: #cdb274;
+}
+
+.icons .group:nth-child(1) .icon:nth-child(4) a i {
+    background-color: #88b999;
+}
+
+.icons .group:nth-child(1) .icon:nth-child(5) a i {
+    background-color: #88b2b9;
+}
+
+.icons .group:nth-child(1) .icon:nth-child(6) a i {
+    background-color: #8897b9;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(1) a i {
+    background-color: #2ca9e1;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(2) a i {
+    background-color: #ec6d71;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(3) a i {
+    background-color: #00a381;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(4) a i {
+    background-color: #e6b422;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(5) a i {
+    background-color: #e95295;
+}
+
+.icons .group:nth-child(2) .icon:nth-child(6) a i {
+    background-color: #d9333f;
+}
+
+.icons .icon a span {
+    display: block;
+    width: 5rem;
+    margin: 0.6rem auto 2.2rem;
+    color: #434343;
+}
+
+.popup .exit, .popup .exit2 {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    height: 3.5rem;
+    width: 100%;
+    font-size: 2.5rem;
+    color: #f07c01;
+    line-height: 3.5rem;
+    text-align: center;
+}
+
+.popup .exit i {
+    transform: rotate(-45deg);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.popup .exit2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: none;
+}
+
+.popup .exit2 i {
+    -webkit-flex: 0 1 50%;
+    -ms-flex: 0 1 50%;
+    flex: 0 1 50%;
+    display: block;
+    line-height: 3.5rem;
+}
+
+.popup .exit2 i:nth-child(1){
+    border-right: 0.01rem solid #e8dfdf;
+    font-size: 2.2rem;
+    color: #007b43;
+}
+
+
+
